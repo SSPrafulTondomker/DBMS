@@ -1,0 +1,229 @@
+<% include Header %>
+
+<div class="ui   inverted left   vertical sidebar menu "   id="mySidenav" style="color: black; background-color: white">
+  <a href="javascript:void(0)" class="item closebtn" onclick="closeNav()" style=" color: black">&times;
+   <!--  <i class="home icon"></i> -->
+    Prodcut Filter 
+  </a>
+  
+  <div class="ui form item" style="color: black; ">
+   <!--  <i class="block layout icon"></i> -->
+   <form action="/Products" method="POST">
+    <div class="field ">
+    <div class="ui horizontal green divider">Product Name</div>
+		 <select class="ui fluid search multiple selection simple dropdown" >
+		 	 <option value="">Product</option>
+			  <option value="AL">Potato</option>
+			  <option value="AK">LadyFinger</option>
+			  <option value="AZ">Onion</option>
+			  <option value="AR">Brinjal</option>
+			  <option value="CA">Tomato</option>
+			  <option value="CO">Coriander</option>
+			  <option value="CT">Ginger</option>
+			  <option value="DE">Carrot</option>
+			  <option value="DC">Cauliflower</option>
+			  <option value="FL">Spinach</option>
+			  
+			</select>
+	</div>
+	<div class="field">
+	<div class="ui horizontal divider">Product Weight</div>
+		<input type="text" name="psweight" placeholder="weight">
+	</div>
+	<div class="field">
+	<div class="ui horizontal divider">Retailer Name</div>
+		<input type="text" name="psweight" placeholder="Retailer if u know">
+	</div>
+  </div>
+  <div class="ui horizontal divider" >Price</div>
+
+  <div class="ui checked item" style="color: black">
+  <input type="checkbox" checked="">
+  <label>10-20</label>
+  </div>
+  <div class="ui checked item" style="color: black">
+  <input type="checkbox" checked="">
+  <label>20-30</label>
+  </div>
+  <div class="ui checked item" style="color: black">
+  <input type="checkbox" checked="">
+  <label>30-40</label>
+  </div>
+  <div class="item" >
+  	<button class="ui button basic green"> submit</button>
+  </div>
+</form>
+</div>
+
+<div class="row"></div>
+<div class="container-fluid">
+	<div class="col-lg-5 col-sm-5 ">
+		<div class="ui piled segment">
+			<h4 style="text-align: center;"> 
+				Transaction
+			</h4>
+			<form action="/Products" method="POST">
+				<div class="ui form" >
+				  <div class="two fields">
+				    <div class="field ">
+				      <label>Username</label>
+				      <input placeholder="First Name" type="text" name= "wsName">
+				    </div>
+				    <div class="field">
+				      <label>Password </label>
+				      <input placeholder="Last Name" type="text" name= "wslName">
+				    </div>
+				  </div>
+				  <div class="field ">
+				    <label>City</label>
+				      <input placeholder="City" type="text" name= "wscName">
+				  </div>
+				  <div class="field ">
+				    <label>State</label>
+				      <input placeholder="State" type="text" name= "wssName">
+				  </div>
+				  <div class="ui buttons ">
+	  				<button class="ui button" >Cancel</button>
+	  				<div class="or"></div>
+	  				<button class="ui positive button" type="submit">Save</button>
+				   </div>
+				</div>
+		</div>
+	</div>
+
+
+	
+	</form>
+
+	
+
+	<div class="col-lg-7 col-sm-7 ">
+		<div class="ui piled segment" >
+			<div class="row"></div>
+			<div class="container-fluid">
+				
+				<div class="ui segments col-lg-12">
+				
+				  <div class="ui green segment">
+				    <p> top</p>
+				  </div>
+				 <div class="ui green segment">
+				    <p> top</p>
+				  </div><div class="ui green segment">
+				    <p> top</p>
+				  </div><div class="ui green segment">
+				    <p> top</p>
+				  </div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+<div class="row"></div>
+<div class="col-lg-6"></div>
+<div class="col-lg-2">
+	<button class="button basic" type="submit" onclick="del()">hello</button>
+</div>
+</div>
+
+<div class="row" style="margin-top: 10%"></div>
+<div class="ui link cards ">
+		  	<div class="card col-lg-4">
+		    	<div class="image">
+		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+		    	</div>
+			    <div class="content">
+			      	<div class="header">Potato</div>
+			      	<div class="description">
+			        	IIT2016082@iiita.ac.in
+			      	</div>
+			    </div>
+			    <div class="extra content">
+			      	<span class="right floated">
+			        	Joined in 2018
+			      	</span>
+			      	<span>
+			        	<i class="user icon"></i>
+			        	75 Friends
+			      	</span>
+			    </div>
+		  	</div>
+		  	<div class="card col-lg-4" >
+		    	<div class="image">
+		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+		    	</div>
+			    <div class="content">
+			      	<div class="header">Tomato</div>
+			      	<div class="description">
+			        	IIT2016087@iiita.ac.in
+			      	</div>
+			    </div>
+			    <div class="extra content">
+			      	<span class="right floated">
+			        	Joined in 2018
+			      	</span>
+			      	<span>
+			        	<i class="cart arrow down icon"></i>
+			        	Add to Cart
+			      	</span>
+			    </div>
+		  	</div>
+		  <div class="card col-lg-4" >
+		    	<div class="image">
+		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+		    	</div>
+			    <div class="content">
+			      	<div class="header">Onion</div>
+			      	
+			      	<div class="description">
+			        	IIT2016084@iiita.ac.in
+			      	</div>
+			    </div>
+			    <div class="extra content">
+			      	<span class="right floated">
+			        	Joined in 2013
+			      	</span>
+			      	<span>
+			        	<i class="user icon"></i>
+			        	75 Friends
+			      	</span>
+			    </div>
+		  	</div>
+		
+		 <div class="card col-lg-4" >
+		    	<div class="image">
+		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+		    	</div>
+			    <div class="content">
+			      	<div class="header">Shubahm </div>
+			      	
+			      	<div class="description">
+			        	IIT2016084@iiita.ac.in
+			      	</div>
+			    </div>
+			    <div class="extra content">
+			      	<span class="right floated">
+			        	Joined in 2013
+			      	</span>
+			      	<span>
+			        	<i class="user icon"></i>
+			        	75 Friends
+			      	</span>
+			    </div>
+		  	</div>
+		</div>
+
+<script type="text/javascript">
+	function del(){
+		document.getElementById("mySidenav").classList.toggle("visible");
+	}
+	function closeNav(){
+		document.getElementById("mySidenav").classList.toggle("visible");
+	}
+	
+  
+</script>
+<% include Footer %>

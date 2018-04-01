@@ -1,0 +1,42 @@
+<% include Header %>
+<%include login %>
+
+<div class="container">
+	<div class="jumbotron" >
+		
+<h2 class="ui icon header">
+  <i class="settings icon"></i>
+  <div class="content">
+    Account Settings
+    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+  </div>
+</h2>
+		<ul>
+			<h4>Its Nice To Meet You</h4>
+			<li>
+				Easy to use
+			</li>
+			<li>
+				convinent
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+	<h2 style="display: center;">our Products</h2>
+	<div class="row" style="display: flex; flex-wrap: wrap;">
+		<% HomeSe.forEach(function(product) 
+		{%>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%=product.image%>">
+					<div class="caption">
+						<h4><%=product.name%></h4>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</div>
+</div>
+<% include Footer %>
