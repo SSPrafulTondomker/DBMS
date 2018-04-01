@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var bodyparser = require("body-parser");
-var mysql = require ('mysql');
+//var mysql = require ('mysql');
 var HomeImg = [
 		{name : "salmon creek", image:"https://www.w3schools.com/bootstrap4/sanfran.jpg"},
 		{name : "lola", image: "https://www.w3schools.com/bootstrap4/sanfran.jpg"},
@@ -18,14 +18,14 @@ var HomeImg = [
 	]
 
 
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
 
 	host: 'localhost',
 	user: 'root',
 	password: 'xxxx',
 	database: 'EMandi'
 });
-
+*/
 
 var allGoods = [
 	{userName : "Top"},
@@ -36,14 +36,14 @@ var allGoods = [
 	{userName : "Last"}
 ];
 
-connection.connect(function(error){
+/*connection.connect(function(error){
 	if (error){
 		console.log('error');
 	}else{
 		console.log("connected");
 	}
 });
-
+*/
 app.use (bodyparser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/views'));
 app.set ("view engine", "ejs");
@@ -89,7 +89,7 @@ app.get ("/Contact", function(req, res){
 
 
 //Login 
-app.post("/Home", function(req, res){
+/*app.post("/Home", function(req, res){
 	var Name = req.body.uname;
 	var Password = req.body.psw;
 	var show = "select * from LoginTable where name = ? and password = ?";
@@ -286,6 +286,7 @@ app.post("/dump", function (req, res) {
 		});
 	
 });
+*/
 //host on 3000
 app.listen(3000, function(){
 	console.log ("Server Started!!!");
