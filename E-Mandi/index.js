@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
 
 	host: 'localhost',
 	user: 'root',
-	password: 'xxxx',
+	password: 'Ts@9849493088',
 	database: 'EMandi'
 });
 
