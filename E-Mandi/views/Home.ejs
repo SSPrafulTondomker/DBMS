@@ -30,13 +30,16 @@
 		{%>
 			<div class="col-md-3 col-sm-6">
 				<div class="thumbnail">
-					<img src="<%=product.image%>">
+					<img src="<%=product.image%>" class="ui image autumn transition visible" id="flip">
 					<div class="caption">
-						<h4><%=product.name%></h4>
+						<h4> <i class="cart arrow down icon"></i> <%=product.name%></h4>
+
 					</div>
 				</div>
 			</div>
 		<% }); %>
 	</div>
 </div>
+
+
 <% include Footer %>
