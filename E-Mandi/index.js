@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var bodyparser = require("body-parser");
 var mysql = require ('mysql');
+
+
 var HomeImg = [
 		{name : "salmon creek", image:"https://www.w3schools.com/bootstrap4/sanfran.jpg"},
 		{name : "lola", image: "https://www.w3schools.com/bootstrap4/sanfran.jpg"},
@@ -22,8 +24,8 @@ var connection = mysql.createConnection({
 
 	host: 'localhost',
 	user: 'root',
-	password: 'xxxx',
-	database: 'EMandi'
+	password: 'dabas98',
+	database: 'EMandi1'
 });
 
 
@@ -92,7 +94,7 @@ app.get ("/Contact", function(req, res){
 app.post("/Home", function(req, res){
 	var Name = req.body.uname;
 	var Password = req.body.psw;
-	var show = "select * from LoginTable where name = ? and password = ?";
+	var show = "select * from User where name = ? and password = ?";
 	connection.query(show, [Name, Password], function(err, result, fields){
 		if (err){
 			console.log(error);
@@ -108,36 +110,77 @@ app.post("/Home", function(req, res){
 	});
 });
 
-
-
+var usercnt, data, check, creatdb, insert, data2;
 //Register only unique name
 app.post ("/Register", function(req, res){
-
+	var create = req.body.email;
 	var creatn = req.body.name;
 	var creatp = req.body.password;
-	console.log(creatn);
-	console.log(creatp);
-	var data = [
-		[creatn, creatp]
-	];
-	var check = "select * from LoginTable where name = ?"
-	var creatdb = "insert into LoginTable (name, password) values ?";
+	//console.log(creatn);
+	//console.log(creatp);
+	//console.log(create);
+	var max = "select * from user";
+	connection.query(max,function(err,result,fields){
+			if(err){
+						console.log("error");
+					}else{
+						console.log("success " + result.length);
+						if(result.length == 0)
+							usercnt = 0;
+						else
+							usercnt = result.length;
+						usercnt = usercnt + 1;
+						console.log(usercnt + "hello");
 
-	connection.query(check,[creatn], function (err, result, fields){
-		if (result.length == 0 ){
-			connection.query(creatdb, [data], function (err, result, fields){
-				if(err){
-					console.log("error");
-				}else{
-					console.log("success");
-					res.redirect("Home/"+creatn);
-				}
-			});
-		}else{
-			console.log("duplicate");
-			res.redirect("Register");
-		}
+						data = [
+							[usercnt, creatn, creatp]
+						];
+						
+						check = "select * from UserInfo where email = ?"
+						creatdb = "insert into User (userid, name, password )values ?";
+					    insert = "insert into UserInfo values ?";
+					    data2 = [
+							[usercnt,req.body.phone,req.body.city,req.body.state,req.body.address,create]
+					    ];
+
+					    connection.query(check,[create], function (err, result, fields){
+						if (result.length == 0 ){
+							connection.query(creatdb, [data], function (err, result, fields){
+								if(err){
+									console.log("error1");
+								}else{
+									console.log("success");
+									connection.query(insert,[data2],function(err,result,fields){
+									if(err){
+										console.log("error2");
+									}else{
+										console.log("success");	
+										res.redirect("Home/"+creatn);
+									}
+								  });
+									
+								}
+							});
+						}else{
+							console.log("duplicate");
+							res.redirect("Register");
+						}
 	}); 
+
+					}	
+	});
+	/*console.log(usercnt + "hello");
+
+	var data = [
+		[usercnt, creatn, creatp]
+	];
+	
+	var check = "select * from UserInfo where email = ?"
+	var creatdb = "insert into User (userid, name, password )values ?";
+    var insert = "insert into UserInfo values ?";
+    var data2 = [
+		[usercnt,req.body.phone,req.body.city,req.body.state,req.body.address,create]
+    ];*/
 });
 
 
@@ -286,6 +329,7 @@ app.post("/dump", function (req, res) {
 		});
 	
 });
+
 //host on 3000
 app.listen(3000, function(){
 	console.log ("Server Started!!!");
