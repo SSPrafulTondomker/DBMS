@@ -1,0 +1,44 @@
+<div class="ui modal" id="xyz">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="/img/emandi1.jpg">
+    </div>
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+        <form class="ui form" action="/Home" method="POST">
+  <div class="field">
+     <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+  </div>
+  <div class="field">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button basic grey" type="submit">Submit</button>
+</form>
+        <!-- -->
+        
+        <!-- -->
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button" type="submit">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+
+</div>

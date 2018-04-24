@@ -1,229 +1,186 @@
-<% include Header %>
+<% include Partials/GoodsHeader %>
+<% include Partials/BuyList %>
+<% include GoodsLogin %>
+<% include Partials/TodayPrice %>
 
-<div class="ui   inverted left   vertical sidebar menu "   id="mySidenav" style="color: black; background-color: white">
-  <a href="javascript:void(0)" class="item closebtn" onclick="closeNav()" style=" color: black">&times;
-   <!--  <i class="home icon"></i> -->
-    Prodcut Filter 
+<div class="ui vertical sidebar menu" id="mySidenav" style="margin-top: 500px;">
+  <div class="item">
+    <div class="ui input"><input type="text" placeholder="Search..."></div>
+  </div>
+  <div class="item">
+    Home
+    <div class="menu">
+      <a class="active item">Search</a>
+      <a class="item">Add</a>
+      <a class="item">Remove</a>
+    </div>
+  </div>
+  <a class="item">
+    <i class="grid layout icon"></i> Browse
   </a>
-  
-  <div class="ui form item" style="color: black; ">
-   <!--  <i class="block layout icon"></i> -->
-   <form action="/Products" method="POST">
-    <div class="field ">
-    <div class="ui horizontal green divider">Product Name</div>
-		 <select class="ui fluid search multiple selection simple dropdown" >
-		 	 <option value="">Product</option>
-			  <option value="AL">Potato</option>
-			  <option value="AK">LadyFinger</option>
-			  <option value="AZ">Onion</option>
-			  <option value="AR">Brinjal</option>
-			  <option value="CA">Tomato</option>
-			  <option value="CO">Coriander</option>
-			  <option value="CT">Ginger</option>
-			  <option value="DE">Carrot</option>
-			  <option value="DC">Cauliflower</option>
-			  <option value="FL">Spinach</option>
-			  
-			</select>
-	</div>
-	<div class="field">
-	<div class="ui horizontal divider">Product Weight</div>
-		<input type="text" name="psweight" placeholder="weight">
-	</div>
-	<div class="field">
-	<div class="ui horizontal divider">Retailer Name</div>
-		<input type="text" name="psweight" placeholder="Retailer if u know">
-	</div>
+  <a class="item">
+    Messages
+  </a>
+  <div class="ui dropdown item">
+    More
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item"><i class="edit icon"></i> Edit Profile</a>
+      <a class="item"><i class="globe icon"></i> Choose Language</a>
+      <a class="item"><i class="settings icon"></i> Account Settings</a>
+    </div>
   </div>
-  <div class="ui horizontal divider" >Price</div>
-
-  <div class="ui checked item" style="color: black">
-  <input type="checkbox" checked="">
-  <label>10-20</label>
-  </div>
-  <div class="ui checked item" style="color: black">
-  <input type="checkbox" checked="">
-  <label>20-30</label>
-  </div>
-  <div class="ui checked item" style="color: black">
-  <input type="checkbox" checked="">
-  <label>30-40</label>
-  </div>
-  <div class="item" >
-  	<button class="ui button basic green"> submit</button>
-  </div>
-</form>
 </div>
+  <div class="pusher">
+   <% include Partials/GoodsNavbar %>
 
-<div class="row"></div>
-<div class="container-fluid">
-	<div class="col-lg-5 col-sm-5 ">
-		<div class="ui piled segment">
-			<h4 style="text-align: center;"> 
-				Transaction
-			</h4>
-			<form action="/Products" method="POST">
-				<div class="ui form" >
-				  <div class="two fields">
-				    <div class="field ">
-				      <label>Username</label>
-				      <input placeholder="First Name" type="text" name= "wsName">
-				    </div>
-				    <div class="field">
-				      <label>Password </label>
-				      <input placeholder="Last Name" type="text" name= "wslName">
-				    </div>
-				  </div>
-				  <div class="field ">
-				    <label>City</label>
-				      <input placeholder="City" type="text" name= "wscName">
-				  </div>
-				  <div class="field ">
-				    <label>State</label>
-				      <input placeholder="State" type="text" name= "wssName">
-				  </div>
-				  <div class="ui buttons ">
-	  				<button class="ui button" >Cancel</button>
-	  				<div class="or"></div>
-	  				<button class="ui positive button" type="submit">Save</button>
-				   </div>
+
+
+<div class="ui container">
+	<div class="ui grid">
+		<div class="row">
+			<div class="six wide column">
+				<div class="ui piled segment">
+					<h4 style="text-align: center;"> 
+						Transaction
+					</h4>
+					<form action="/Products" method="POST">
+						<div class="ui form" >
+						  <div class="field ">
+    				      <label>Product Name</label>
+    				      <input placeholder="Product Name" type="text" name= "pname">
+    				    </div>
+    				    <div class="field">
+    				      <label>Quantity</label>
+    				      <input placeholder="Quantity" type="text" name= "weight">
+    				    </div>
+		                <div class="field">
+		                  <label>Username</label>
+		                  <input placeholder="Username" type="text" name= "wname">
+		                </div>
+    				  
+    				  <div class="field ">
+    				    <label>City</label>
+    				      <input placeholder="City" type="text" name= "wscName">
+    				  </div>
+    				  <div class="field ">
+    				    <label>State</label>
+    				      <input placeholder="State" type="text" name= "wssName">
+    				  </div>
+    				  <div class="ui buttons ">
+    	  				<button class="ui button" >Cancel</button>
+    	  				<div class="or"></div>
+    	  				<button class="ui positive button" type="submit">Save</button>
+    				   </div>
+						</div>
+					</form>
 				</div>
-		</div>
-	</div>
-
-
-	
-	</form>
-
-	
-
-	<div class="col-lg-7 col-sm-7 ">
-		<div class="ui piled segment" >
-			<div class="row"></div>
-			<div class="container-fluid">
-				
-				<div class="ui segments col-lg-12">
-				
-				  <div class="ui green segment">
-				    <p> top</p>
-				  </div>
-				 <div class="ui green segment">
-				    <p> top</p>
-				  </div><div class="ui green segment">
-				    <p> top</p>
-				  </div><div class="ui green segment">
-				    <p> top</p>
-				  </div>
-				
+			</div>
+			<div class="two wide column"></div>
+			<div class="six wide column">
+				<div class="ui piled segment" >
+					<div class="ui segments ">
+						<div class="ui green segment">
+				    		<p> top</p>
+				  		</div>
+				  		<div class="ui green segment">
+				    		<p> top</p>
+				  		</div>
+				  		<div class="ui green segment">
+				    		<p> top</p>
+				  		</div>
+				  		<div class="ui green segment">
+				    		<p> top</p>
+				  		</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container-fluid">
-<div class="row"></div>
-<div class="col-lg-6"></div>
-<div class="col-lg-2">
-	<button class="ui button basic green" type="submit" onclick="del()">hello</button>
-</div>
-</div>
-
-<div class="row" style="margin-top: 10%"></div>
-<div class="ui link cards ">
-		  	<div class="card col-lg-4">
-		    	<div class="image">
-		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
-		    	</div>
-			    <div class="content">
-			      	<div class="header">Potato</div>
-			      	<div class="description">
-			        	IIT2016082@iiita.ac.in
-			      	</div>
-			    </div>
-			    <div class="extra content">
-			      	<span class="right floated">
-			        	Joined in 2018
-			      	</span>
-			      	<span>
-			        	<i class="user icon"></i>
-			        	75 Friends
-			      	</span>
-			    </div>
-		  	</div>
-		  	<div class="card col-lg-4" >
-		    	<div class="image">
-		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
-		    	</div>
-			    <div class="content">
-			      	<div class="header">Tomato</div>
-			      	<div class="description">
-			        	IIT2016087@iiita.ac.in
-			      	</div>
-			    </div>
-			    <div class="extra content">
-			      	<span class="right floated">
-			        	Joined in 2018
-			      	</span>
-			      	<span>
-			        	<i class="cart arrow down icon"></i>
-			        	Add to Cart
-			      	</span>
-			    </div>
-		  	</div>
-		  <div class="card col-lg-4" >
-		    	<div class="image">
-		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
-		    	</div>
-			    <div class="content">
-			      	<div class="header">Onion</div>
-			      	
-			      	<div class="description">
-			        	IIT2016084@iiita.ac.in
-			      	</div>
-			    </div>
-			    <div class="extra content">
-			      	<span class="right floated">
-			        	Joined in 2013
-			      	</span>
-			      	<span>
-			        	<i class="user icon"></i>
-			        	75 Friends
-			      	</span>
-			    </div>
-		  	</div>
-		
-		 <div class="card col-lg-4" >
-		    	<div class="image">
-		      		<img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
-		    	</div>
-			    <div class="content">
-			      	<div class="header">Shubahm </div>
-			      	
-			      	<div class="description">
-			        	IIT2016084@iiita.ac.in
-			      	</div>
-			    </div>
-			    <div class="extra content">
-			      	<span class="right floated">
-			        	Joined in 2013
-			      	</span>
-			      	<span>
-			        	<i class="user icon"></i>
-			        	75 Friends
-			      	</span>
-			    </div>
-		  	</div>
+<!-- <div class="ui container">
+	<div class="ui grid">
+		<div class="row">
+			<button class="ui button basic green" type="submit" onclick="dell()">hello</button>
 		</div>
+	</div>
+</div> -->
 
-<script type="text/javascript">
-	function del(){
-		document.getElementById("mySidenav").classList.toggle("visible");
-	}
-	function closeNav(){
-		document.getElementById("mySidenav").classList.toggle("visible");
-	}
-	
-  
-</script>
-<% include Footer %>
+<div class="ui horizontal divider" >wsg</div>
+
+<div class="ui container">
+  <div class="ui grid">
+  	<h2 style="display: center;">our Products</h2>
+  	<div class="row">
+    <% var c = 0 %>
+    <% for (var i = 0; i < Products.length; i++) {%>
+      <div class="four wide column">
+        <div class="ui link cards">
+          <div class="card">
+            <div class="image">
+              <img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+            </div>
+            <div class="content">
+              <div class="header">Matt Giampietro</div>
+              <div class="meta">
+                 <a>Friends</a>
+              </div>
+              <div class="description">
+                Matthew is an interior designer living in New York.
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="left floated">
+                <h4> <i class="cart arrow down icon"></i> <%= Products[i].userName %> </h4>
+                 <!-- <p> 
+                	 <%=Products[i].userName %></p>   -->
+              <button onclick="fer()" id="myBtn" class="ui button basic grey huge"><i class="ui arrow icon">Buy</i></button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% c += 1 %>
+     <% if (c%4 == 0) {%>
+        <div class="ui horizontal divider">sgsgsd</div>
+     <% } %>
+      <% } %>
+   
+      </div>
+  </div>
+</div>
+
+<div class="ui modal" id="modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+    </div>
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+      <form class="ui form" action="/pds" method="POST">
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="uname" placeholder="Name">
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+<% include Partials/Footer %>
+ 
+ 

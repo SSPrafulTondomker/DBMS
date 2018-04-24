@@ -1,4 +1,4 @@
-<% include Header %>
+<% include RegistrationHeader %>
 
 <div class="container">
 	<div class="row">
@@ -8,6 +8,9 @@
 			<form action="/Register" method="POST" class="ui form">
 			<div class="form-group">
 				<input class="form-control" type="text" name="name" placeholder="Name" required = "Enter Name">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" placeholder="Username" required = "Enter Username">
 			</div>
 			<div class="form-group">
 				<input class="form-control" type="text" name="email" placeholder="E-mail" required>
@@ -28,16 +31,16 @@
 				<input class="form-control" type="text" name="address" placeholder="Address" required>
 			</div>
 			<label>
-        		<input type="checkbox" name="remember"> Farmer
+        		<input type="radio" name="utype" value="1"> Farmer
       		</label>
       		<label>
-        		<input type="checkbox" name="remember"> Retailer
+        		<input type="radio" name="utype" value="2"> Retailer
       		</label>
       		<label>
-        		<input type="checkbox" name="remember"> Wholesaler
+        		<input type="radio" name="utype" value="3"> Wholesaler
       		</label>
       		<label>
-        		<input type="checkbox" name="remember"> Civilian
+        		<input type="radio" name="utype" value="4" checked="checked"> Civilian
       		</label>
 			<div class="field">
 				<button class="ui green basic button"> <i class="paper plane icon"></i>submit </button>

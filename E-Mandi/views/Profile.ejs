@@ -1,0 +1,159 @@
+<% include Partials/GoodsHeader %>
+<% include Partials/GoodsNavbar %>
+<% include Partials/BuyList %>
+<% include GoodsLogin %>
+<% include Partials/TodayPrice %>
+
+<div class="row" style="margin-top: 7%"></div>
+<div class="ui container">
+	<div class="ui grid">
+  		<div class="five wide column">
+  			<div class="ui huge vertical menu">
+				<div class="item">
+				    <div class="header">Profile</div>
+				    <div class="menu">
+				      <a class="item">Name: </a>
+				      <a class="item">Password: </a>
+				</div>
+		    </div>
+				  
+				  <div class="item">
+				    <div class="header">Settings</div>
+				    <div class="menu">
+				      <a class="item" onclick="edit()" >Edit</a>
+				      <a class="item">Facebook</a>
+				    </div>
+				  </div>
+				</div>
+  </div>
+
+<div class="ui modal" id="EDIT"><i class="close icon"></i>
+	<div class="header">
+    	Profile Picture
+ 	</div>
+  	<div class="image content">
+    	<div class="ui medium image">
+      		<img src="/img/emandi1.jpg">
+    	</div>
+    	<div class="description">
+      		<div class="ui header">Please enter the products you have</div>
+      			<form class="ui form" action="/addprodetails" method = "POST">
+  					<!-- <div class="field">
+    					<label>Name</label>
+			    		<div class="two fields">
+			      			<div class="field">
+			        		<input type="text" name="shipping[first-name]" placeholder="First Name">
+			      			</div>
+			      		<div class="field">
+			        		<input type="text" name="shipping[last-name]" placeholder="Last Name">
+			      		</div>
+			    		</div>
+			  		</div> -->
+			  		<div class="field">
+			    		<label> Product Name</label>
+			   			<div class="fields">
+			        			<input type="text" name="pname" placeholder="Product Name" required>
+					    </div>
+					</div>
+          <div class="field">
+              <label> Quantity</label>
+              <div class="fields">
+                    <input type="text" name="quantity" placeholder="Quantity" required>
+              </div>
+          </div>
+          <div class="field">
+              <label>Your Price</label>
+              <div class="fields">
+                    <input type="text" name="price" placeholder="Your Price" required>
+              </div>
+          </div>
+          <button class="ui positive button" type="submit">Submit</button>
+				</form>
+			</div>
+  		</div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class=" six wide column">
+  <div class="ui massive card">
+  <div class="content">
+    <div class="header">Transactions </div>
+    <div class="meta">
+      <span class="right floated time">2 days ago</span>
+      <span class="category">Sell</span>
+    </div>
+    <div class="description">
+      <div class="ui segments">
+      <% prevtrans.forEach(function(s1) 
+       { %>
+      	<div class="ui segment">
+      		<% s1.Date %>
+          <%s1.userName %>
+          jbvjk
+      	</div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="right floated author">
+      <img class="ui avatar large image" src="img/emandi1.jpg"> Shubham
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="five wide column">
+  	<div class="ui special cards">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Change Profile Pic</div>
+          </div>
+        </div>
+      </div>
+      <img src="img/emandi1.jpg">
+    </div>
+    <div class="content">
+      <a class="header">Shubham</a>
+      <div class="meta">
+        <span class="date">Created in Sep 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+    <p>Revenue Generated</p>
+    <p></p>
+      <a onclick="Price()">
+        <i class="money icon"></i>
+        revenue
+      </a>
+    </div>
+  </div>
+
+  
+</div>
+  </div>
+</div>
+</div>
+<script type="">
+function edit() {
+	alert();
+	$('#EDIT').modal('show');
+}
+	$('.special.cards .image').dimmer({
+  on: 'hover'
+});
+</script>
+<% include Partials/Footer %>

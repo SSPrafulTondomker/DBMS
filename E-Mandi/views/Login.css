@@ -1,5 +1,8 @@
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+
+body {
+        
+
+    font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -119,4 +122,3 @@ span.psw {
        width: 100%;
     }
 }
-</style>

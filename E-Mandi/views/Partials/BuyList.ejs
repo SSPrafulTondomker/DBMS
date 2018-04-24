@@ -1,0 +1,32 @@
+<div class="ui basic modal" id="Buy">
+  <div class="ui icon header">
+    <i class="cart icon"></i>
+    Buy List
+  </div>
+  <div class="content">
+    <div class="ui segments">
+      <div class="segment">
+
+        <% cart.forEach(function(s1) 
+          {%>
+              <p><%=s1.ProductName%>
+              </p>
+           
+          <% }); %>
+
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>
+      No
+    </div>
+    <form action = "/trans" method = "POST">
+      <button class="ui green ok inverted button" type = "submit">
+        <i class="checkmark icon"></i>
+        Yes
+      </button>
+    </form>  
+  </div>
+</div>

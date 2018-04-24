@@ -1,155 +1,178 @@
-<% include Header %>
+<% include Partials/GoodsHeader %>
+
+<% include Partials/GoodsNavbar %>
+
+<% include Partials/BuyList %>
+<!-- -->
+<% include GoodsLogin %>
+<!-- -->
+
+<% include Partials/TodayPrice %>
 
 
+<div class="ui horizontal divider" style="margin-top: 2%">sf</div>
 <!-- Product Filer -->
-<div class="container-fluid">
-	<div class="col-lg-5 col-sm-5 ">
-		<div class="ui piled segment">
-			<h4 style="text-align: center;"> 
-				Wholesaler Finder
-			</h4>
-			<form action="/Goods" method="POST">
-				<div class="ui form" >
-				  <div class="two fields">
-				    <div class="field ">
-				      <label>First Name</label>
-				      <input placeholder="First Name" type="text" name= "wsName">
-				    </div>
-				    <div class="field">
-				      <label>Last Name</label>
-				      <input placeholder="Last Name" type="text" name= "wslName">
-				    </div>
-				  </div>
-				  <div class="field ">
-				    <label>City</label>
-				      <input placeholder="City" type="text" name= "wscName">
-				  </div>
-				  <div class="field ">
-				    <label>State</label>
-				      <input placeholder="State" type="text" name= "wssName">
-				  </div>
-				  <div class="ui buttons ">
-	  				<button class="ui button" >Cancel</button>
-	  				<div class="or"></div>
-	  				<button class="ui positive button" type="submit">Save</button>
-				   </div>
-				</div>
-		</div>
-	</div>
+<div class="ui container">
+  <div class="ui grid">
+  	<div class="two column row">
+      <div class="column ">
+    		<div class="ui piled segment">
+    			<h4 style="text-align: center;"> 
+    				Wholesaler Finder
+    			</h4>
+    			<form action="/Goods" method="POST">
+    				<div class="ui form" >
+    				  
+    				    <div class="field ">
+    				      <label>Product Name</label>
+    				      <input placeholder="Product Name" type="text" name= "pname">
+    				    </div>
+    				    <div class="field">
+    				      <label>Quantity</label>
+    				      <input placeholder="Quantity" type="text" name= "weight">
+    				    </div>
+                <div class="field">
+                  <label>Username</label>
+                  <input placeholder="Username" type="text" name= "wname">
+                </div>
+    				  
+    				  <div class="field ">
+    				    <label>City</label>
+    				      <input placeholder="City" type="text" name= "wscName">
+    				  </div>
+    				  <div class="field ">
+    				    <label>State</label>
+    				      <input placeholder="State" type="text" name= "wssName">
+    				  </div>
+    				  <div class="ui buttons ">
+    	  				<button class="ui button" >Cancel</button>
+    	  				<div class="or"></div>
+    	  				<button class="ui positive button" type="submit">Save</button>
+    				   </div>
+    				</div>
+            </form>
+      		</div>
+        </div>
 
-
-	
-	</form>
-
-	
-
-	<div class="col-lg-7 col-sm-7 ">
-		<div class="ui piled segment" >
-			<div class="row"></div>
-			<div class="container-fluid">
-				
-				<div class="ui segments col-lg-12">
-				<% Goods.forEach(function(s1) 
-				{%>
-				  <div class="ui green segment">
-				    <p><%=s1.userName%></p>
-				  </div>
-				 
-				<% }); %>
-				</div>
-			</div>
-		</div>
-	</div>
+  	<div class="column">
+  		<div class="ui piled segment" >
+  			<div class="row"></div>
+  			<div class="container-fluid">
+  				
+  				<div class="ui segments ">
+  				<% Goods.forEach(function(s1) 
+  				{%>
+  				  <div class="ui green segment">
+  				    <p><%=s1.userName%>
+  				    </p>
+  				  </div>
+  				 
+  				<% }); %>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  </div>
 </div>
 
-<div class="container" style="margin-top: 80px">
-	<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-  
-      <th scope="col">Name</th>
-      <th scope="col">Mobile No.</th>
-      <th scope="col">Address </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>9898989898</td>
-      <td> delhi </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>849238498</td>
-      <td>Hyderabad</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>0923578435</td>
-      <td>Chennai</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="row" style="margin-top: 10% "></div>
-<div class="ui divider horizontal green">
-	Sale For Farmer
+<div class="ui container">
+  <div class="ui grid">
+  	<h2 style="display: center;">our Products</h2>
+  	<!-- <div class="row" >
+  		<% Goods.forEach(function(product) 
+  		{%>
+  			<div class="four wide column">
+  				<div class="ui bordered image"  >
+  					<img src="<%=product.image%>" class="ui image autumn transition visible" >
+  					<div class="caption">
+  						<h4> <i class="cart arrow down icon"></i> <%=product.name%> </h4>
+              <i class="ui arrow icon"><button onclick="fer()" id="myBtn" class="ui button basic green large">Sell</button></i>
+             
+  <div class="ui star rating" data-rating="3"></div>
+  					</div>
+  				</div>
+  			</div>
+  		<% }); %>
+  	</div> -->
+     <div class="row">
+    <% var c = 0 %>
+    <% for (var i = 0; i < Goods.length; i++) {%>
+      <div class="four wide column">
+        <div class="ui link cards">
+          <div class="card">
+            <div class="image">
+              <img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
+            </div>
+            <div class="content">
+              <div class="header">Matt Giampietro</div>
+              <div class="meta">
+                 <a>Friends</a>
+              </div>
+              <div class="description">
+                Matthew is an interior designer living in New York.
+              </div>
+            </div>
+            <div class="extra content">
+              <span class="left floated">
+              <h4> <i class="cart arrow down icon"></i> <%= Goods[i].userName %></h4>
+              <button type="submit" id="myBtn" class="ui button basic grey huge"><i class="ui arrow icon">Sell</i></button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% c += 1 %>
+     <% if (c%4 == 0) {%>
+        <div class="ui horizontal divider">sgsgsd</div>
+     <% } %>
+      <% } %>
+   
+      </div>
+  </div>
 </div>
 
-<div class="container-fluid" style="margin-top: 80px">
-	<form action="/dump" method="POST">
-	<div class="ui large form">
-  <div class="two fields">
-    <div class="field">
-      <label>UserName</label>
-      <input placeholder="UserName" type="text" name="wuName">
+
+
+
+
+
+<div class="ui modal" id="modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="https://semantic-ui.com/images/avatar2/large/matthew.png">
     </div>
-    <div class="field">
-      <label>Product Name</label>
-      <input placeholder="Product Name" type="text" name="wpName">
-    </div>
-    <div class="field ">
-      <label>Product Weight</label>
-      <input placeholder="Product Weight" type="text" name="wpWeight">
+    <div class="description">
+      <div class="ui header">We've auto-chosen a profile image for you.</div>
+      <form class="ui form" action="/amp" method="POST" >
+  <div class="field">
+    <label>Name</label>
+    <input type="text" name="uname" placeholder="Name">
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
     </div>
   </div>
-  <button class="ui col-lg-2 green basic submit button" >Submit</button>
-  
-</div>
-</form>
-</div>
-
-<div class="row" style="margin-top: 10% "></div>
-<div class="ui divider horizontal green">
-	Sale For Retailer
-</div>
-
-<div class="container-fluid" style="margin-top: 80px">
-	<form action="/dump" method="POST">
-	<div class="ui large form">
-  <div class="two fields">
-    <div class="field">
-      <label>UserName</label>
-      <input placeholder="UserName" type="text" name="wuName">
+  <div class="actions">
+    <div class="ui black deny button">
+      Nope
     </div>
-    <div class="field">
-      <label>Product Name</label>
-      <input placeholder="Product Name" type="text" name="wpName">
-    </div>
-    <div class="field ">
-      <label>Product Weight</label>
-      <input placeholder="Product Weight" type="text" name="wpWeight">
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
     </div>
   </div>
-
-  <button class="ui col-lg-2 green basic submit button" >Submit</button>
-  
-</div>
-</form>
 </div>
 
-<% include Footer %>
+
+
+
+
+
+
+
+<% include Partials/Footer %>
